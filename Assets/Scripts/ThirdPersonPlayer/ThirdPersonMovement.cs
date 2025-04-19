@@ -8,7 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     // Character Controller
     public CharacterController controller;
-    public Transform camera;
+    public Transform cameraTransform;
 
     // Movement Values
     public float speed = 6f;
@@ -66,7 +66,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, smoothness);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
