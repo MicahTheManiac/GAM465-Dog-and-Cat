@@ -10,6 +10,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cameraTransform;
 
+    // Activity
+    public bool isActive = true;
+
     // Movement Values
     public float speed = 6f;
     public float smoothness = 0.1f;
@@ -64,7 +67,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         Vector3 direction = new Vector3(x, 0f, z).normalized;
 
-        if (direction.magnitude >= 0.1)
+        if (direction.magnitude >= 0.1 && isActive)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, smoothness);
@@ -75,7 +78,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
         // Jumping (Make it Continuous, i.e. hold to jump)
-        if (Input.GetButton("Jump") && _isGrounded)
+        if (Input.GetButton("Jump") && _isGrounded && isActive)
         {
             // Eq: SQRT(h * -2 * g)
             _velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
