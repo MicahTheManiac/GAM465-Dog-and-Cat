@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Goal : MonoBehaviour
+public class Goal : Activator
 {
     // Activator
     public Activator activator;
@@ -11,9 +11,6 @@ public class Goal : MonoBehaviour
     // Indicators
     public GameObject indicatorOff;
     public GameObject indicatorOn;
-
-    // Status
-    public bool isActive = false;
 
     // Start is called before the first frame update
     void Start()
