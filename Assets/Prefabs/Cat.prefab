@@ -121,9 +121,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7618459722401869944, guid: b8b02ce1991df0242b540454007cf124, type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618459722401869944, guid: b8b02ce1991df0242b540454007cf124, type: 3}
+      propertyPath: m_Center.y
+      value: -0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5313668617033813648, guid: b8b02ce1991df0242b540454007cf124, type: 3}
+    - {fileID: 6550652034722024900, guid: b8b02ce1991df0242b540454007cf124, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2762445519353415981, guid: b8b02ce1991df0242b540454007cf124, type: 3}
       insertIndex: -1
