@@ -11,6 +11,7 @@ public class SwitchPlayer : MonoBehaviour
     public List<GameObject> playerCameras;
     public KeyCode switcherKey = KeyCode.E;
     public KeyCode escapeKey = KeyCode.Escape;
+    public KeyCode escapeKeyWeb = KeyCode.Q;
 
     private int _activePlayerIndex = 0;
 
@@ -61,7 +62,7 @@ public class SwitchPlayer : MonoBehaviour
         }
 
         // Allow Return to Main Menu
-        if (Input.GetKeyDown(escapeKey))
+        if (Input.GetKeyDown(escapeKey) || Input.GetKeyDown(escapeKeyWeb))
         {
             SceneManager.LoadScene("MainMenu");
         }
