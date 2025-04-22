@@ -2,6 +2,7 @@ using Controller;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SwitchPlayer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SwitchPlayer : MonoBehaviour
     public List<ThirdPersonMovement> playerMovers;
     public List<GameObject> playerCameras;
     public KeyCode switcherKey = KeyCode.E;
+    public KeyCode escapeKey = KeyCode.Escape;
 
     private int _activePlayerIndex = 0;
 
@@ -56,6 +58,12 @@ public class SwitchPlayer : MonoBehaviour
             playerCameras[_activePlayerIndex].SetActive(true);
 
             Debug.Log(_activePlayerIndex);
+        }
+
+        // Allow Return to Main Menu
+        if (Input.GetKeyDown(escapeKey))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
